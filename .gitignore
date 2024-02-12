@@ -1,3 +1,8 @@
 .vscode/
 .devenv/
 .direnv/
+
+/resources
+
+# Added by cargo
+/target
