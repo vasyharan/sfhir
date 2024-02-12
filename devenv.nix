@@ -7,7 +7,14 @@ let
     system = args.pkgs.stdenv.system; 
   };
 in {
-  devcontainer.enable = true;
+  devcontainer = {
+    enable = true;
+    settings.customizations.vscode.extensions = [
+      "mkhl.direnv"
+      "rust-lang.rust-analyzer"
+      "bbenoist.Nix"
+    ];
+  };
 
   languages.nix.enable = true;
   languages.rust = {

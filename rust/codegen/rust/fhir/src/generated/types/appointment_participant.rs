@@ -1,0 +1,35 @@
+use super::*;
+/// A booking of a healthcare event among patient(s), practitioner(s), related
+/// person(s) and/or device(s) for a specific date/time. This may result in one or
+/// more Encounter(s).
+#[derive(Debug,Clone,PartialEq)]
+pub struct AppointmentParticipant {
+/// The individual, device, location, or service participating in the appointment.
+pub actor: Reference,
+/// Unique id for the element within a resource (for internal references). This may
+/// be any string value that does not contain spaces.
+pub id: String,
+/// May be used to represent additional information that is not part of the basic
+/// definition of the element and that modifies the understanding of the element
+/// in which it is contained and/or the understanding of the containing element's
+/// descendants. Usually modifier elements provide negation or qualification.
+/// To make the use of extensions safe and managable, there is a strict set
+/// of governance applied to the definition and use of extensions. Though any
+/// implementer can define an extension, there is a set of requirements that SHALL
+/// be met as part of the definition of the extension. Applications processing a
+/// resource are required to check for modifier extensions.
+///
+/// Modifier extensions SHALL NOT change the meaning of any elements on Resource
+/// or DomainResource (including cannot change the meaning of modifierExtension
+/// itself).
+pub modifier_extension: Vec<Extension>,
+/// Participation period of the actor.
+pub period: Period,
+/// Whether this participant is required to be present at the meeting. If false, the
+/// participant is optional.
+pub required: Boolean,
+/// Participation status of the actor.
+pub status: Code,
+/// Role of participant in the appointment.
+pub r#type: Vec<CodeableConcept>,
+}
