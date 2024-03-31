@@ -1,0 +1,7 @@
+image:
+  file: .gitpod/Dockerfile
+tasks:
+  - name: devenv setup
+    init: nix develop --accept-flake-config --command bash -c 'echo done building nix dev environment'
+  - name: cargo check
+    command: cargo watch -x check
