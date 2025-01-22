@@ -27,10 +27,11 @@
         in
         {
           formatter = pkgs.nixpkgs-fmt;
-          devShells.default = pkgs.mkShellNoCC {
+          devShells.default = pkgs.mkShell {
             packages = with pkgs; [
               rust-toolchain
               cargo-watch
+              lldb
             ] ++ lib.optional pkgs.stdenv.isDarwin pkgs.libiconv;
             shellHook = ''
               export RUST_LOG="info"

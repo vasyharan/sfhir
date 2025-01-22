@@ -6,9 +6,32 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow.workspace=true
-serde.workspace=true
-serde_json.workspace=true
-clap = { version = "4.0", features = ["derive"] }
-convert_case = "0.6"
-textwrap = "0.16.0"
+
+[dependencies.anyhow]
+workspace = true
+
+[dependencies.serde]
+workspace = true
+
+[dependencies.serde_json]
+workspace = true
+
+[dependencies.lazy_static]
+workspace = true
+
+[dependencies.clap]
+version = "4.0"
+features = ["derive"]
+
+[dependencies.reqwest]
+version = "0.12"
+features = ["blocking"]
+
+[dependencies.convert_case]
+version = "0.7"
+
+[dependencies.textwrap]
+version = "0.16.0"
+
+[dependencies.zip]
+version = "2.2"
